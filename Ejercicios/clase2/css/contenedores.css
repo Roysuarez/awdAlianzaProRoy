@@ -4,7 +4,9 @@ html {
 }
 
 body{
-    font-size: 12px;
+    height: 100%;
+    font-size: 20px;
+    overflow: hidden;
 }
 
 p{
@@ -65,7 +67,7 @@ p{
 .contenedor6
     {
         color : white;
-        background-color: yellowgreen;
+        background-color: yellowgreen;     
     }
 .contenedor7
     {
@@ -74,3 +76,34 @@ p{
         height: 30px;
     }
 
+.aa{
+    background-color: red;
+    height: 30px;
+}
+.ab{
+    background-color: orangered;
+    height: 100px;
+}       
+.bc{
+    background-color: orange;
+    height: 100px;
+}
+.cd{
+    background-color: yellow;
+    height: 100px;
+}
+.de{
+    background-color: greenyellow;
+}
+.ef{
+    background-color: yellowgreen;
+}
+.fg{
+    background-color: green;
+    height: 30px;
+}
+
+
+.row .aa, .row .ab, .row .bc, .row .cd, .row .de, .row .ef, .row .fg {
+    color: white;
+}
