@@ -1,0 +1,25 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body
+    {
+        color: white;
+        background-color: black;
+    }
+
+
+@media only screen and (min-width: 321px) and (max-width: 720px){
+    body{
+        color: black;
+        background-color: white;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    body { 
+        color: white;
+        background-color: black 
+    }
+}
