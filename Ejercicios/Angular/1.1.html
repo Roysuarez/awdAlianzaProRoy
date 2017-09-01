@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ng-init="persona={nombre:'Tomas',apellido:'Lorenzo'}; autos=[{marca:'Fiat',color:'Verde'},{marca:'Porche',color:'Violeta'},{marca:'bmw',color:'Amarillo'},{marca:'Ferrari',color:'Rojo'},{marca:'Porche',color:'Negro'},{marca:'Porche',color:'Azul'}]" >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Angular App</title>
+        <script src="./Core/angular.min.js"></script>
+    </head>
+    <body>
+        <h2>1.1</h2>
+        <div>Persona: {{persona.nombre + " " + persona.apellido}} </div>
+        <h2>1.2</h2>
+        <div>Cruzando la calle con mi auto Ferrari de color {{autos[3].color}} </div>
+        <h2>1.3</h2>
+        <div>Color: {{persona.nombre === 'Tomas' ? autos[0].color : autos[2].color}} </div>
+        <h2>1.4</h2>
+        <div ng-repeat="auto in autos">
+            <div>{{auto.marca | uppercase}}</div>
+        </div>
+        <h2>1.5</h2>
+        <input type="checkbox" ng-model="checked">
+        <div ng-show="checked" ng-hide="!checked">
+            <img src="./1.jpg">
+        </div>
+        <div ng-show="!checked" ng-hide="checked">
+            <img src="./2.jpg">     
+        </div>
+        <h2>1.6</h2>
+        <div ng-repeat="auto in autos">
+            <div ng-switch on="{{ auto.marca === 'Porche'}}">
+                <span ng-switch-when="true">
+                    <ul>
+                        <li>{{auto.color}}</li>
+                    </ul>
+                </span>
+        </div>
+    </body>
+</html>
