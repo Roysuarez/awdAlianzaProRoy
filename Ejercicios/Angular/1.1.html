@@ -19,20 +19,20 @@
         </div>
         <h2>1.5</h2>
         <input type="checkbox" ng-model="checked">
-        <div ng-show="checked" ng-hide="!checked">
+        <div ng-show="checked">
             <img src="./1.jpg">
         </div>
-        <div ng-show="!checked" ng-hide="checked">
+        <div ng-show="!checked">
             <img src="./2.jpg">     
         </div>
         <h2>1.6</h2>
-        <div ng-repeat="auto in autos">
-            <div ng-switch on="{{ auto.marca === 'Porche'}}">
-                <span ng-switch-when="true">
-                    <ul>
+            <ul>
+                <div ng-repeat="auto in autos">
+                    <div ng-if="{{ auto.marca == 'Porche'}}">
                         <li>{{auto.color}}</li>
-                    </ul>
-                </span>
+                    </div>
+                </div>
+            </ul>
         </div>
     </body>
 </html>

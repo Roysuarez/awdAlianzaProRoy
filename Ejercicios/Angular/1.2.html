@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularJoSe">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Angular App 2</title>
+        <script src="./Core/angular.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var app = angular.module('AngularJoSe', []);
+            app.filter('primeraUltima', function(){
+                return function(x){
+                    var i, c, txt = "";
+                    for (i = 0; i < x.length; i++){
+                        c = x[i];
+                        if(i == 0){
+                            c = c.toUpperCase();
+                        }else if(i == x.length){
+                            c = c.toUpperCase();
+                        }
+                        txt += c;
+                    } 
+                    return txt;
+                };
+            });
+            
+            app.controller('saludo', function($scope){
+                $scope.hello ={
+                    hola: 'Hola Mundo'
+                };    
+            });
+            app.controller('automoviles', function($scope){
+                $scope.autos =[{marca:'Fiat',color:'Verde'},{marca:'Porche',color:'Violeta'},{marca:'bmw',color:'Amarillo'},{marca:'Ferrari',color:'Rojo'},{marca:'Porche',color:'Negro'},{marca:'Porche',color:'Azul'}];
+            });
+        </script>
+        <h2>Ejercicio 2 Angular</h2>
+        <div ng-controller="saludo">
+            <p ng-model="hello.hola">{{hello.hola}}</p>
+            <input type="text" name="input" ng-model="hello.hola" required ng-trim="false">
+        </div>
+        <div ng-controller="automoviles">
+            <ul>
+                <p><input type="text" ng-model="auto.marca"></p>
+                <li ng-repeat="auto in autos | filter: auto.marca | orderBy: auto.color">
+                    {{auto.marca | primeraUltima}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
