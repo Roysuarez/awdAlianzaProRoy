@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularJS">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Angular App 3</title>
+        <script src="./Core/angular.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var app = angular.module('AngularJS', []);
+
+            app.controller('todoEnMemoria', ["$scope",function($scope){
+                $scope.memorias =[
+                    {
+                    texto: 'Jovlantuum',
+                    conquistador: 'Fraqoom',
+                    editar: false
+                    },
+                    {
+                    texto: 'Xaloumnot',
+                    conquistador: 'Valoor',
+                    editar: false
+                    }
+                    ];
+                $scope.memoriaNueva = {};
+                $scope.value= false; 
+
+                $scope.mostrar= function(editar){
+                    if(!editar){
+                        editar = true;
+                    }else if(editar){
+                        editar = false;
+                    }
+                    return editar;
+                }
+
+                $scope.agregarMemoria = function(){
+                $scope.memorias.push($scope.memoriaNueva);
+                $scope.memoriaNueva = {};
+                $scope.memoriaNueva.texto = "...";
+                }
+
+                $scope.borrarMemoria = function(memoria){
+                    var index = $scope.memorias.indexOf(memoria);
+                    $scope.memorias.splice(index, 1);
+                }
+            }]);
+            
+            
+            
+        </script>
+        <h2>Ejercicio 3 Angular</h2>
+        <div ng-controller="todoEnMemoria">
+            <p ng-model="hello.hola">{{hello.hola}}</p>
+            Planeta: <input type="text" name="input" ng-model="memoriaNueva.texto" placeholder="Ingrese Texto">
+            Conquistador: <input type="text" name="input" ng-model="memoriaNueva.conquistador" placeholder="Ingrese Conquistador">
+            <hr>
+            <span><label>El nuevo planeta a agregar es:   <b>{{memoriaNueva.texto}}</b></label></span><button ng-click="agregarMemoria(memoriaNueva)"> Agregar</button>
+            <ul>
+                <li ng-repeat="memoria in memorias | orderBy: 'texto'">
+                    <span ng-hide="editar"><label>Planeta:  <b>{{memoria.texto}}</b> Conquistador:  <b>{{memoria.conquistador}}</b>  </label><button ng-model="memoria.editar" ng-click="mostrar(memoria.editar)">Editar</button><button ng-click="borrarMemoria(memoria)">Borrar</button></span>
+                    <span ng-show="editar"><input type="text" name="input" ng-model="memoria.texto" ><button ng-click="mostar()">Aceptar</button></span>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
