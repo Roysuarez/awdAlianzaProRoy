@@ -32,6 +32,7 @@
             });
             app.controller('automoviles', function($scope){
                 $scope.autos =[{marca:'Fiat',color:'Verde'},{marca:'Porche',color:'Violeta'},{marca:'bmw',color:'Amarillo'},{marca:'Ferrari',color:'Rojo'},{marca:'Porche',color:'Negro'},{marca:'Porche',color:'Azul'}];
+                $scope.search ={marca:'',color:''};
             });
         </script>
         <h2>Ejercicio 2 Angular</h2>
@@ -41,8 +42,8 @@
         </div>
         <div ng-controller="automoviles">
             <ul>
-                <p><input type="text" ng-model="autos[$index].marca"></p>
-                <li ng-repeat="auto in autos | filter: marca | orderBy: 'color'">
+                <p><input type="text" ng-model="search.marca"></p>
+                <li ng-repeat="auto in autos | filter: search | orderBy: 'color'">
                     {{auto.marca | primeraUltima}} {{".........." + auto.color}}
                 </li>
             </ul>

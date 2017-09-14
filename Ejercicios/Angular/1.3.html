@@ -26,14 +26,15 @@
                 $scope.memoriaNueva = {};
                 $scope.value= false; 
 
-                $scope.mostrar= function(editar){
-                    if(!editar){
-                        editar = true;
-                    }else if(editar){
-                        editar = false;
+                $scope.mostrar= function(memoria){
+                    if(!memoria.editar){
+                        memoria.editar = true;
+                    }else if(memoria.editar){
+                        memoria.editar = false;
                     }
-                    return editar;
+                    return memoria;
                 }
+
 
                 $scope.agregarMemoria = function(){
                 $scope.memorias.push($scope.memoriaNueva);
@@ -44,6 +45,9 @@
                 $scope.borrarMemoria = function(memoria){
                     var index = $scope.memorias.indexOf(memoria);
                     $scope.memorias.splice(index, 1);
+                }
+                $scope.checked = function(memoria){
+                    
                 }
             }]);
             
@@ -58,10 +62,12 @@
             <hr>
             <span><label>El nuevo planeta a agregar es:   <b>{{memoriaNueva.texto}}</b></label></span><button ng-click="agregarMemoria(memoriaNueva)"> Agregar</button>
             <ul>
+            <ion-content>
                 <li ng-repeat="memoria in memorias | orderBy: 'texto'">
-                    <span ng-hide="editar"><label>Planeta:  <b>{{memoria.texto}}</b> Conquistador:  <b>{{memoria.conquistador}}</b>  </label><button ng-model="memoria.editar" ng-click="mostrar(memoria.editar)">Editar</button><button ng-click="borrarMemoria(memoria)">Borrar</button></span>
-                    <span ng-show="editar"><input type="text" name="input" ng-model="memoria.texto" ><button ng-click="mostar()">Aceptar</button></span>
+                    <input type="checkbox" ng-change="checked(memoria)"><span ng-hide="memoria.editar"><label>Planeta:  <b>{{memoria.texto}}</b> Conquistador:  <b>{{memoria.conquistador}}</b>  </label><button ng-model="memoria.editar" ng-click="mostrar(memoria)">Editar</button><button ng-click="borrarMemoria(memoria)">Borrar</button></span></input>
+                    <span ng-show="memoria.editar"><input type="text" name="input" ng-model="memoria.texto" ><button ng-click="mostrar(memoria)">Aceptar</button></span>
                 </li>
+            <ion-content>
             </ul>
         </div>
     </body>
