@@ -1,5 +1,7 @@
 app.controller('todoEnMemoria', ["$scope","abmService",function($scope,abmService){
-    $scope.planetas = abmService.dameLosDescubrimientos();
+    abmService.dameLosDescubrimientos().then(function(response){
+        $scope.planetas = response.data;
+    });
     $scope.nuevoPlaneta = {};
     $scope.agregarPlaneta = function(){
         var nuevoDesc = $scope.nuevoPlaneta;
