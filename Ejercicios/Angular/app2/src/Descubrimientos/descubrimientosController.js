@@ -1,20 +1,20 @@
-app.controller('todoEnMemoria', ["$scope","abmFactory","abmService",function($scope,abmFactory,abmService){
+app.controller('descubrimientosController', ["$scope","descubrimientosFactory",function($scope,descubrimientosFactory){
     $scope.nuevoPlaneta = {};
-    abmFactory.dameLosDescubrimientos().then(function(response){
+    descubrimientosFactory.dameLosDescubrimientos().then(function(response){
         $scope.planetas = response;
     });
     
 
     $scope.agregarPlaneta = function(){
         var nuevoDesc = $scope.nuevoPlaneta;
-        abmFactory.agregaUnDescubrimiento(nuevoDesc).then(function(response){
+        descubrimientosFactory.agregaUnDescubrimiento(nuevoDesc).then(function(response){
         $scope.nuevoPlaneta = {};
         $scope.planetas.push(response);
         })
     };
 
     $scope.borrarPlaneta = function(planeta){
-        abmFactory.borrarUnDescubrimiento(planeta).then(function(response){
+        descubrimientosFactory.borrarUnDescubrimiento(planeta).then(function(response){
         var index = $scope.planetas.indexOf(planeta);
         $scope.planetas.splice(index, 1);
     })
@@ -22,7 +22,7 @@ app.controller('todoEnMemoria', ["$scope","abmFactory","abmService",function($sc
 
     $scope.editarPlaneta= function(planeta){
         if(planeta.editar){
-            abmFactory.editarUnDescubrimiento(planeta)
+            descubrimientosFactory.editarUnDescubrimiento(planeta)
             planeta.editar = false;
         }else{
             planeta.editar = true;

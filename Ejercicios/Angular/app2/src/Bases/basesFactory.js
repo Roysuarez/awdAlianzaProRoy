@@ -1,8 +1,8 @@
- app.factory('abmFactory', ['$http','$q',function($http,$q){
+ app.factory('basesFactory', ['$http','$q',function($http,$q){
     return{
-        dameLosDescubrimientos:  function(){
+        dameLasBases:  function(){
         var deferred = $q.defer();
-        $http({method: 'GET', url: 'http://localhost:3000/Descubrimientos'}).then
+        $http({method: 'GET', url: 'http://localhost:3000/Bases'}).then
         (function (response) {
             deferred.resolve(response.data);
         }, function errorCallBack(response) {
@@ -12,9 +12,9 @@
         );
         return deferred.promise;
     },
-        agregaUnDescubrimiento: function(nuevoDesc){
+        agregaUnaBase: function(nuevoDesc){
         var deferred = $q.defer();
-        $http.post('http://localhost:3000/Descubrimientos', nuevoDesc).then(function(response){
+        $http.post('http://localhost:3000/Bases', nuevoDesc).then(function(response){
                 deferred.resolve(response.data);
             }, function errorCallback(response){
                 deferred.reject(response);
@@ -22,9 +22,9 @@
         );
         return deferred.promise;
     },
-        borrarUnDescubrimiento: function(planeta){
+        borrarUnaBase: function(planeta){
         var deferred = $q.defer();
-        $http.delete("http://localhost:3000/Descubrimientos/"+planeta.id).then(function(response){
+        $http.delete("http://localhost:3000/Bases/"+planeta.id).then(function(response){
                 deferred.resolve(response.data);
             }, function errorCallBack(response){
                 deferred.reject(response);
@@ -32,13 +32,23 @@
         );
         return deferred.promise;
     },
-        editarUnDescubrimiento: function(planeta){
+        editarUnaBase: function(planeta){
         var deferred = $q.defer();
-        $http.put("http://localhost:3000/Descubrimientos/"+planeta.id, planeta).then(function(response){
+        $http.put("http://localhost:3000/Bases/"+planeta.id, planeta).then(function(response){
             deferred.resolve(response.data);
         }, function errorCallBack(response){
             deferred.reject(response);
-        }
+            }
+        );
+        return deferred.promise;
+    },
+        dbGetBasesDetail: function(baseId){
+        var deferred = $q.defer();
+        $http.get("http://localhost:3000/Bases/"+baseId).then(function(response){
+            deferred.resolve(response.data);
+        }, function errorCallBack(response){
+            deferred.reject(response);
+            }
         );
         return deferred.promise;
     }

@@ -8,12 +8,18 @@
         <title>Angular App 3</title>
         <script src="./Core/angular.min.js"></script>
         <script src="app.js"></script>
-        <script src="./Descubrimientos/controllers/tareasController.js"></script>
-        <script src="./Descubrimientos/filters/tareasFilters.js"></script>
-        <script src="./Descubrimientos/services/tareasServices.js"></script>
-        <script src="./Descubrimientos/factory/tareasFactory.js"></script>
-        <script src="./Descubrimientos/controllers/Enrutamiento.js"></script>
-        <link rel="stylesheet" href="./Descubrimientos/css/style.css">
+        <script src="./node_modules/jquery/dist/jquery.js"></script>
+        <script src="./node_modules/angular-route/angular-route.js"></script> 
+        <script src="./src/Descubrimientos/descubrimientosController.js"></script>
+        <script src="./src/Descubrimientos/descubrimientosFactory.js"></script>
+        <script src="./src/Naves/navesController.js"></script>
+        <script src="./src/Naves/navesFactory.js"></script>
+        <script src="./src/Bases/basesController.js"></script>
+        <script src="./src/Bases/basesDetailController.js"></script>
+        <script src="./node_modules/angular-cookies/angular-cookies.min.js"></script>
+        <script src="./src/Bases/basesFactory.js"></script>
+        <script src="./EnrutamientoController.js"></script>
+        <link rel="stylesheet" href="./src/css/style.css">
     </head> 
     <body>
         <hr>
@@ -24,9 +30,9 @@
                 <pre>$route.current.params = {{$route.current.params}}</pre>
                 <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
                 <pre>$routeParams = {{$routeParams}}</pre>
-                <div ng-include src="urlNav"></div>
             </div>
         <hr/>
+        <div ng-include src="'./nav.html'"></div>
         <div ng-view></div>
     </body>
 </html>

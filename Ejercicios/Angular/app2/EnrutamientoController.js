@@ -3,5 +3,5 @@ app.controller('EnrutamientoController', function($scope, $route, $routeParams, 
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
     
-    $scope.urlNav = 'src/views/base/nav.html';
+    $scope.urlNav = 'nav.html';
 })

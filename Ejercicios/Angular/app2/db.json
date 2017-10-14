@@ -1,14 +1,16 @@
 {
   "Descubrimientos": [
     {
-      "texto": "qwer",
+      "texto": "qwervvvvvvaaa",
       "conquistador": "qwer",
-      "id": 1
+      "id": 1,
+      "editar": false
     },
     {
-      "texto": "qwer",
+      "texto": "qwerqwew",
       "conquistador": "qwer",
-      "id": 2
+      "id": 2,
+      "editar": false
     },
     {
       "texto": "qwer",
@@ -25,14 +27,39 @@
     {
       "modelo": "qwer",
       "piloto": "qwer",
-      "id": 1
+      "id": 1,
+      "editar": false,
+      "texto": "ssad"
+    },
+    {
+      "modelo": "asd",
+      "piloto": "asda",
+      "id": 2,
+      "editar": false,
+      "texto": "wwww"
     }
   ],
   "Bases": [
     {
-      "tamaño": 2323,
-      "locacion": "qwerqwerqwer",
-      "id": 1
+      "nombre": "asdasdSSS",
+      "tamano": "asdasdas",
+      "id": 1,
+      "editar": false
+    },
+    {
+      "nombre": "QWEQWE",
+      "tamano": "QWEQWE",
+      "id": 2
+    },
+    {
+      "nombre": "ASDSSAD",
+      "tamano": "213123",
+      "id": 3
+    },
+    {
+      "nombre": "ASDAS",
+      "tamano": "123",
+      "id": 4
     }
   ]
 }

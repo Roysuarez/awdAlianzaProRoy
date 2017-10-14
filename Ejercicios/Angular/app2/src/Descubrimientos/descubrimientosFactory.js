@@ -1,4 +1,4 @@
- app.factory('abmFactory', ['$http','$q',function($http,$q){
+ app.factory('descubrimientosFactory', ['$http','$q',function($http,$q){
     return{
         dameLosDescubrimientos:  function(){
         var deferred = $q.defer();
