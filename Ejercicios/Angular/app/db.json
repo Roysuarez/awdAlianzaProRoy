@@ -1,14 +1,38 @@
 {
   "Descubrimientos": [
     {
-      "texto": "qwerqwer",
-      "conquistador": "Fraqoom",
-      "editar": false
+      "texto": "qwer",
+      "conquistador": "qwer",
+      "id": 1
     },
     {
-      "texto": "Xaloumnot",
-      "conquistador": "Valoor",
-      "editar": false
+      "texto": "qwer",
+      "conquistador": "qwer",
+      "id": 2
+    },
+    {
+      "texto": "qwer",
+      "conquistador": "qwerere",
+      "id": 3
+    },
+    {
+      "texto": "qewre",
+      "conquistador": "rererer",
+      "id": 4
+    }
+  ],
+  "Naves": [
+    {
+      "modelo": "qwer",
+      "piloto": "qwer",
+      "id": 1
+    }
+  ],
+  "Bases": [
+    {
+      "tamaño": 2323,
+      "locacion": "qwerqwerqwer",
+      "id": 1
     }
   ]
 }
