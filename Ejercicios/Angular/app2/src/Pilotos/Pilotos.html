@@ -1,0 +1,14 @@
+<h2>Ejercicio Estructura Angular</h2>
+    <div>
+        <p ng-model="hello.hola">{{hello.hola}}</p>
+        Nombre: <input type="text" name="input" ng-model="nuevoPlaneta.nombre" placeholder="Ingrese Nombre">
+        Apellido: <input type="text" name="input" ng-model="nuevoPlaneta.apellido" placeholder="Ingrese Apellido">
+        <hr>
+        <span><label>La nueva nave a agregar es:   <b>{{nuevoPlaneta.nombre}}</b></label></span><button ng-click="agregarPlaneta(nuevoPlaneta)"> Agregar</button>
+        <ul>
+            <li ng-repeat="planeta in planetas" >
+                <input type="checkbox" ng-model="tachado"><span ng-hide="planeta.editar" ng-class="{check: tachado}"><label>Id: <b>{{planeta.id}} </b>Nombre:  <b>{{planeta.nombre}}</b> Apellido:  <b>{{planeta.apellido}}</b>  </label><button ng-model="planeta.editar" ng-click="editarPlaneta(planeta)">Editar</button><button ng-click="borrarPlaneta(planeta)">Borrar</button></span></input>
+                <span ng-show="planeta.editar"><input type="text" name="input" ng-model="planeta.texto" ><button ng-click="editarPlaneta(planeta)">Aceptar</button></span>
+            </li>          
+        </ul>
+    </div>

@@ -1,4 +1,4 @@
-var app = angular.module('AngularExample', ['ngRoute','ngCookies']);
+var app = angular.module('AngularExample', ['ngRoute','ngCookies','angular-md5']);
 
 app.config(['$qProvider','$routeProvider','$locationProvider', function($qProvider, $routeProvider, $locationProvider) {
     $qProvider.errorOnUnhandledRejections(false);
@@ -10,6 +10,10 @@ app.config(['$qProvider','$routeProvider','$locationProvider', function($qProvid
     .when('/bases', {
         templateUrl: './src/Bases/Bases.html',
         controller: 'basesController',
+    })
+    .when('/pilotos', {
+        templateUrl: './src/Pilotos/Pilotos.html',
+        controller: 'pilotosController',
     })
     .when('/registro', {
         templateUrl: 'src/registro/register.html',

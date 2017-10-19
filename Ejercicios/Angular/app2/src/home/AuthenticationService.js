@@ -1,8 +1,8 @@
-app.service('AuthenticationService',['$http', '$cookies', '$rootScope', 'navesFactory',function($http, $cookies, $rootScope, navesFactory)
+app.service('AuthenticationService',['$http', '$cookies', '$rootScope', 'pilotosFactory',function($http, $cookies, $rootScope, pilotosFactory)
 {
  
         this.Login = function(username, password, callback) {
-            navesFactory.dbGetNavePorPiloto(username)
+            pilotosFactory.dbGetPiloto(username)
                 .then(function (user) {
                     //Podriamos extender esta funcionalidad para que no hayan nombre de usuarios repetidos.
                     if (user !== null && user.length > 0 && user[0].password === password) {

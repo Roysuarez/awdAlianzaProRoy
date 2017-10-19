@@ -1,10 +1,11 @@
-app.controller("homeController",["$scope","$location", "AuthenticationService",function($scope, $location, AuthenticationService){
+app.controller("homeController",["$scope","$location", "AuthenticationService","md5",function($scope, $location, AuthenticationService,md5){
 
     $scope.login = function() {
         $scope.dataLoading = true;
-        AuthenticationService.Login($scope.username, $scope.password, function (response) {
+        var passwordHash = md5.createHash($scope.password);
+        AuthenticationService.Login($scope.username, passwordHash, function (response) {
             if (response.success) {
-                AuthenticationService.SetCredentials($scope.username, $scope.password);
+                AuthenticationService.SetCredentials($scope.username, passwordHash);
                 $location.path('/');
             } else {
                 $scope.dataLoading = false;

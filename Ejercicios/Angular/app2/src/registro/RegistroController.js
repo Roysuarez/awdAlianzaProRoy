@@ -1,8 +1,9 @@
-app.controller("registroController",["$scope","navesFactory", "$location", "$rootScope",function($scope, navesFactory, $location, $rootScope){
+app.controller("registroController",["$scope","pilotosFactory", "$location", "$rootScope","md5",function($scope, pilotosFactory, $location, $rootScope, md5){
  
     $scope.register = function() {
         $scope.dataLoading = true;
-        navesFactory.agregaUnDescubrimiento($scope.user)
+        $scope.user.password = md5.createHash($scope.user.password)
+        pilotosFactory.agregaUnDescubrimiento($scope.user)
             .then(function (response) {
                 if (response) {
                     $location.path('/login');

@@ -23,40 +23,19 @@
       "id": 4
     }
   ],
-  "Naves": [
-    {
-      "modelo": "qwer",
-      "piloto": "qwer",
-      "id": 1,
-      "editar": false,
-      "texto": "ssad"
-    },
-    {
-      "modelo": "asd",
-      "piloto": "asda",
-      "id": 2,
-      "editar": false,
-      "texto": "wwww"
-    },
-    {
-      "nombre": "Roy",
-      "apellido": "Suarez",
-      "username": "Roasdas",
-      "password": "1234",
-      "id": 3
-    }
-  ],
+  "Naves": [],
   "Bases": [
     {
-      "nombre": "asdasdSSS",
+      "nombre": "asdasd",
       "tamano": "asdasdas",
       "id": 1,
       "editar": false
     },
     {
-      "nombre": "QWEQWE",
+      "nombre": "QWE",
       "tamano": "QWEQWE",
-      "id": 2
+      "id": 2,
+      "editar": false
     },
     {
       "nombre": "ASDSSAD",
@@ -67,6 +46,22 @@
       "nombre": "ASDAS",
       "tamano": "123",
       "id": 4
+    }
+  ],
+  "Pilotos": [
+    {
+      "nombre": "123",
+      "apellido": "123",
+      "username": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": 1
+    },
+    {
+      "nombre": "aaa",
+      "apellido": "aaa",
+      "username": "aaa",
+      "password": "47bce5c74f589f4867dbd57e9ca9f808",
+      "id": 2
     }
   ]
 }
