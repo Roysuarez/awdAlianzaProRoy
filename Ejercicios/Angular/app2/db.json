@@ -37,6 +37,13 @@
       "id": 2,
       "editar": false,
       "texto": "wwww"
+    },
+    {
+      "nombre": "Roy",
+      "apellido": "Suarez",
+      "username": "Roasdas",
+      "password": "1234",
+      "id": 3
     }
   ],
   "Bases": [

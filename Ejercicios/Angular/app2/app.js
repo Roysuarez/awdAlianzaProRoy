@@ -11,6 +11,14 @@ app.config(['$qProvider','$routeProvider','$locationProvider', function($qProvid
         templateUrl: './src/Bases/Bases.html',
         controller: 'basesController',
     })
+    .when('/registro', {
+        templateUrl: 'src/registro/register.html',
+        controller: 'registroController',
+    })
+    .when('/login', {
+        templateUrl: 'src/home/login.html',
+        controller: 'homeController',
+    })
     .when('/descubrimientos', {
         templateUrl: './src/Descubrimientos/Descubrimientos.html',
         controller: 'descubrimientosController',    
