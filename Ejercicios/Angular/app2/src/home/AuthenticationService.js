@@ -6,7 +6,7 @@ app.service('AuthenticationService',['$http', '$cookies', '$rootScope', 'pilotos
                 .then(function (user) {
                     //Podriamos extender esta funcionalidad para que no hayan nombre de usuarios repetidos.
                     if (user !== null && user.length > 0 && user[0].password === password) {
-                        response = { success: true };
+                        response = { success: true , userRole: user[0].role};
                     } else {
                         response = { success: false, message: 'Username or password Incorrectos' };
                     }
@@ -17,13 +17,14 @@ app.service('AuthenticationService',['$http', '$cookies', '$rootScope', 'pilotos
                 });
         }
  
-        this.SetCredentials = function(username, password) {
+        this.SetCredentials = function(username, password, userRole) {
             var authdata = Base64.encode(username + ':' + password);
             
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata
+                    authdata: authdata,
+                    userRole: userRole
                 }
             };
  
@@ -38,7 +39,7 @@ app.service('AuthenticationService',['$http', '$cookies', '$rootScope', 'pilotos
         
         //Metodo para limpiar las cookis y borrar los datos del usuario
         this.ClearCredentials = function() {
-            $rootScope.globals = {};
+            $rootScope.globals = false;
             $cookies.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         }

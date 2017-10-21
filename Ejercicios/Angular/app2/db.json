@@ -21,9 +21,30 @@
       "texto": "qewre",
       "conquistador": "rererer",
       "id": 4
+    },
+    {
+      "texto": "12",
+      "id": 5
     }
   ],
-  "Naves": [],
+  "Naves": [
+    {
+      "modelo": "1222",
+      "piloto": "3321",
+      "id": 1,
+      "editar": false
+    },
+    {
+      "modelo": "23123",
+      "piloto": "123123",
+      "id": 2
+    },
+    {
+      "modelo": "31231",
+      "piloto": "23123",
+      "id": 3
+    }
+  ],
   "Bases": [
     {
       "nombre": "asdasd",
@@ -54,6 +75,7 @@
       "apellido": "123",
       "username": "123",
       "password": "202cb962ac59075b964b07152d234b70",
+      "role": "admin",
       "id": 1
     },
     {
@@ -61,7 +83,24 @@
       "apellido": "aaa",
       "username": "aaa",
       "password": "47bce5c74f589f4867dbd57e9ca9f808",
+      "role": "public",
       "id": 2
+    },
+    {
+      "nombre": "bbb",
+      "apellido": "bbb",
+      "username": "bbb",
+      "password": "08f8e0260c64418510cefb2b06eee5cd",
+      "role": "public",
+      "id": 3
+    },
+    {
+      "nombre": "Alfred",
+      "apellido": "Tompkson",
+      "username": "Alfred",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055",
+      "role": "public",
+      "id": 4
     }
   ]
 }

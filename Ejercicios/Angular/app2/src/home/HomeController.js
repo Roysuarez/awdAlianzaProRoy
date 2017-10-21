@@ -5,7 +5,7 @@ app.controller("homeController",["$scope","$location", "AuthenticationService","
         var passwordHash = md5.createHash($scope.password);
         AuthenticationService.Login($scope.username, passwordHash, function (response) {
             if (response.success) {
-                AuthenticationService.SetCredentials($scope.username, passwordHash);
+                AuthenticationService.SetCredentials($scope.username, passwordHash, response.userRole);
                 $location.path('/');
             } else {
                 $scope.dataLoading = false;

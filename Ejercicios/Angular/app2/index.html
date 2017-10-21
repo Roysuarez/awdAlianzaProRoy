@@ -6,9 +6,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Angular App 3</title>
-        <script src="./Core/angular.min.js"></script>
+        <script src="./node_modules/angular/angular.js"></script> 
         <script src="app.js"></script>
         <script src="./node_modules/jquery/dist/jquery.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="./node_modules/angular-route/angular-route.js"></script> 
         <script src="./src/Descubrimientos/descubrimientosController.js"></script>
         <script src="./src/Descubrimientos/descubrimientosFactory.js"></script>
@@ -27,9 +28,11 @@
         <script src="./src/home/HomeController.js"></script>
         <link rel="stylesheet" href="./src/css/style.css">
         <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="./src/directivas/backButton.js"></script>
+        <script src="./src/directivas/userSesion.js"></script> 
     </head> 
     <body>
-        <hr>
+        <!--<hr>
             <h1>Enrutamineto</h1>
             <div ng-controller="EnrutamientoController">   
                 <pre>$location.path() = {{$location.path()}}</pre>
@@ -38,7 +41,7 @@
                 <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
                 <pre>$routeParams = {{$routeParams}}</pre>
             </div>
-        <hr/>
+        <hr/>-->
         <div ng-include src="'./nav.html'"></div>
         <div ng-view></div>
     </body>

@@ -3,6 +3,11 @@ app.controller("registroController",["$scope","pilotosFactory", "$location", "$r
     $scope.register = function() {
         $scope.dataLoading = true;
         $scope.user.password = md5.createHash($scope.user.password)
+        if(!$scope.user.role){
+            $scope.user.role = "public"
+        }else{
+            $scope.user.role = "admin"
+        }
         pilotosFactory.agregaUnDescubrimiento($scope.user)
             .then(function (response) {
                 if (response) {
