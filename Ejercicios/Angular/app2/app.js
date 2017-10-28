@@ -1,4 +1,4 @@
-var app = angular.module('AngularExample', ['ngRoute','ngCookies','angular-md5']);
+var app = angular.module('AngularExample', ['ngRoute','ngCookies','angular-md5','angular-carousel']);
 
 app.config(['$qProvider','$routeProvider','$locationProvider', function($qProvider, $routeProvider, $locationProvider) {
     $qProvider.errorOnUnhandledRejections(false);

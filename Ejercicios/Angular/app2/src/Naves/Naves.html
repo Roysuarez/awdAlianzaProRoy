@@ -12,4 +12,13 @@
             </li>          
         </ul>
     </div>
+    <div class="container2">
+        <ul rn-carousel rn-carousel-auto-slide="3" class="carousel ng-scope">
+            <li ng-repeat="slide in imagenes" class="ng-scope" >
+                <div ng-style="{'background-image': 'url(' + slide.imagen + ')'}" class="bgimage ng-scope">
+                </div>
+            </li>
+        </ul>
+    </div>
+    
     <back-button/>

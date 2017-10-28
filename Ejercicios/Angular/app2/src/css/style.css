@@ -2,3 +2,20 @@
     text-decoration: line-through;
     width: 100%;
 }
+.carousel{
+    width: 200px;
+    height: 200px;
+}
+.container2{
+    display: block;
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+}
+
+.bgimage{
+    width: 200px;
+    height: 180px;
+}
