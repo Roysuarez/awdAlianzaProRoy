@@ -28,6 +28,8 @@
         <script src="./src/home/HomeController.js"></script>
         <script src="./src/directivas/backButton.js"></script>
         <script src="./src/directivas/userSesion.js"></script>
+        <script src="./src/directivas/myDraggable.js"></script>
+        <script src="./src/directivas/buscador.js"></script>
         <script src="./node_modules/angular-touch/angular-touch.js"></script>
         <script src="./node_modules/angular-carousel/dist/angular-carousel.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="./src/css/style.css">
@@ -37,17 +39,8 @@
         
     </head> 
     <body>
-        <!--<hr>
-            <h1>Enrutamineto</h1>
-            <div ng-controller="EnrutamientoController">   
-                <pre>$location.path() = {{$location.path()}}</pre>
-                <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
-                <pre>$route.current.params = {{$route.current.params}}</pre>
-                <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
-                <pre>$routeParams = {{$routeParams}}</pre>
-            </div>
-        <hr/>-->
         <div ng-include src="'./nav.html'"></div>
         <div ng-view></div>
+        <span my-draggable></span>
     </body>
 </html>

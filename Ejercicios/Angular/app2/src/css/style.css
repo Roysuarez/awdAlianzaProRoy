@@ -15,7 +15,19 @@
     height: 180px;
 }
 
+img.resize {
+  width: 400px;
+  height:200px;
+}
+
 .bgimage{
     width: 200px;
     height: 180px;
+}
+
+body {
+    background: url("../Bases/world.png")no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    color:grey;
 }

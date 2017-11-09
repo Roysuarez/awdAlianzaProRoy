@@ -1,4 +1,5 @@
 <h2>Bases</h2>
+    <mi-buscador buscar="textoabuscar"></mi-buscador>
     <div>
         <p ng-model="hello.hola">{{hello.hola}}</p>
         Nombre: <input type="text" name="input" ng-model="nuevaBase.nombre" placeholder="Ingrese Nombre">
@@ -6,10 +7,11 @@
         <hr>
         <span><label>La nueva base a agregar es:   <b>{{nuevaBase.nombre}}</b></label></span><button ng-click="agregarBase(nuevaBase)"> Agregar</button>
         <ul>
-            <li ng-repeat="base in bases" >
+            <li ng-repeat="base in bases | filter:{nombre:textoabuscar}" >
                 <input type="checkbox" ng-model="tachado"><span ng-hide="base.editar" ng-class="{check: tachado}"><label>Id: <b>{{base.id}} </b>Nombre:  <b>{{base.nombre}}</b> Tamaño:  <b>{{base.tamano}}</b>  </label><button ng-model="base.editar" ng-click="editarBase(base)">Editar</button><button ng-click="borrarBase(base)">Borrar</button><a href="#!bases/{{base.id}}">Ver Detalle</a></span></input>
                 <span ng-show="base.editar"><input type="text" name="input" ng-model="base.nombre" ><button ng-click="editarBase(base)">Aceptar</button></span>
             </li>          
-        </ul>
+        </ul>       
+        <back-button/>
     </div>
-    <back-button/>
+    

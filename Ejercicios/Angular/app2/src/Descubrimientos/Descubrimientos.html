@@ -1,4 +1,5 @@
 <h2>Descubrimientos</h2>
+    <mi-buscador buscar="textoabuscar"></mi-buscador>
     <div>
         <p ng-model="hello.hola">{{hello.hola}}</p>
         Planeta: <input type="text" name="input" ng-model="nuevoPlaneta.texto" placeholder="Ingrese Texto">
@@ -6,7 +7,7 @@
         <hr>
         <span><label>El nuevo planeta a agregar es:   <b>{{nuevoPlaneta.texto}}</b></label></span><button ng-click="agregarPlaneta(nuevoPlaneta)"> Agregar</button>
         <ul>
-            <li ng-repeat="planeta in planetas" >
+            <li ng-repeat="planeta in planetas | filter:{texto:textoabuscar}" >
                 <input type="checkbox" ng-model="tachado"><span ng-hide="planeta.editar" ng-class="{check: tachado}"><label>Id: <b>{{planeta.id}} </b>Planeta:  <b>{{planeta.texto}}</b> Conquistador:  <b>{{planeta.conquistador}}</b>  </label><button ng-model="planeta.editar" ng-click="editarPlaneta(planeta)">Editar</button><button ng-click="borrarPlaneta(planeta)">Borrar</button></span></input>
                 <span ng-show="planeta.editar"><input type="text" name="input" ng-model="planeta.texto" ><button ng-click="editarPlaneta(planeta)">Aceptar</button></span>
             </li>          
