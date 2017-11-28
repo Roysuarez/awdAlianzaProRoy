@@ -1,0 +1,16 @@
+{
+    "name": "programaEntregable",
+    "version": "0.1.3",
+    "dependencies":{
+    "body-parser": "~1.13.2",
+    "express": "~4.13.1",
+    "method-override": "^2.1.2",
+    "mongoose": "~4.11.13"
+    },
+    "description": "Mi programa yes",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Roy Suarez",
+    "license": "ISC"
+}
