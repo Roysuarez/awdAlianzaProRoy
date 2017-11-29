@@ -6,10 +6,14 @@ router.route('/productos')
 .post(productosCtrl.add)
 .get(productosCtrl.findAll);
 
+
+router.route('/productos/find/')
+.get(productosCtrl.findByName)
+
 router.route('/productos/:id')
 .put(productosCtrl.update)
 .get(productosCtrl.findById)
-.get(productosCtrl.findByName);
+
 
 router.route('/')
 .get(function(req, res){
