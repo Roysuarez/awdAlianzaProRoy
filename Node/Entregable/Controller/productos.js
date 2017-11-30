@@ -1,5 +1,17 @@
 var producto = require('../Model/productos')
 
+function obtenerPorNombre(nombre){
+var respuesta = "";
+producto.find({Nombre: new RegExp(nombre, 'i')}, function (err, productos){
+    if(err) return productos.send(500, err.message);
+    console.log("2" + productos);
+    respuesta = "nombre: " + productos[0].Nombre + " " + "precio: $" + productos[0].Precio;
+    console.log(respuesta);
+    return respuesta;
+});
+
+}
+
 exports.add = function(req, res) {
     var product = new producto({
         Nombre: req.body.nombre,
@@ -45,14 +57,24 @@ exports.findById = function(req, res){
     });
 
 };
-
+//recibe parametro nombre
 exports.findByName = function(req, res){
-    producto.findByName(req.params.nombre, function(err, Producto){
-        if(err)
-            return res.send(500, err.message);
-            res.status(200).jsonp(Producto);
-    });
+    var nombre = "";
+    var productos = [];
+        nombre= req.query.nombre;
+        console.log("1"+nombre);
+        productos = obtenerPorNombre(nombre);
+        console.log("1.5"+productos);
+        //while(!productos){}
+        console.log("3"+productos);
+        return res.send(productos);       
 };
+
+
+
+
+
+
 
 //lista de productos ordenados por precio(asc), en un rango de precios, se pasa el min y el max.
 
