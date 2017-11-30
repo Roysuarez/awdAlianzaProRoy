@@ -1,5 +1,26 @@
 {
   "Productos": [
+    {
+      "Nombre": "qwervvvvvvaaa",
+      "Precio": "qwer",
+      "id": 1,
+      "Detalles": "asdqwdqwdqwdqwd",
+      "Imagen": ""
+    },
+    {
+      "Nombre": "qwervvvvvvaaa",
+      "Precio": "qwer",
+      "id": 2,
+      "Detalles": "asdqwdqwdqwdqwd",
+      "Imagen": ""
+    },
+    {
+      "Nombre": "qwervvvvvvaaa",
+      "Precio": "qwer",
+      "id": 3,
+      "Detalles": "asdqwdqwdqwdqwd",
+      "Imagen": ""
+    }
   ],
   "Clientes": [
   ],

@@ -1,4 +1,4 @@
-app.controller('homeController', ["$scope","homeFactory",function($scope,homeFactory){
+app.controller('homeController', ["$scope","homeFactory","productosFactory",function($scope,homeFactory,productosFactory){
     $scope.nuevoAlgo = {};
     $scope.imagenes = [{ id:1, imagen: './src/Home/1.jpg'},
                          { id:2, imagen: './src/Home/2.jpg'},
@@ -9,8 +9,10 @@ app.controller('homeController', ["$scope","homeFactory",function($scope,homeFac
     homeFactory.obtenerImagenes().then(function(response){
         $scope.image = response;
     });
+    productosFactory.obtenerProductos().then(function(response){
+        $scope.productos = response;
+    });
     
-
     $scope.agregarPlaneta = function(){
         var nuevoDesc = $scope.nuevoPlaneta;
         navesFactory.agregaUnDescubrimiento(nuevoDesc).then(function(response){

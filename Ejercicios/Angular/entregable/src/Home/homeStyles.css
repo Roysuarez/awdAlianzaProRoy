@@ -12,17 +12,6 @@
     display: block;
 }
 
-.navbar-default{
-    color: greenyellow;
-    background-color: greenyellow;
-}
-
-html{
-    background-color: greenyellow;
-}
-.indicator{
-    background-color: greenyellow;
-}
 
 .busca input{
     vertical-align:middle;
@@ -37,14 +26,6 @@ html{
     padding: 12px 20px 12px 40px;
    
 }
-.container{
-    background-color: greenyellow;
-}
-
-.busca{
-    background-color: greenyellow;
-    vertical-align:middle;
-}
 
 .col-lg-3 {
   width: 100%;
@@ -55,4 +36,7 @@ html{
     color: green;
     padding-top: 16px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.btnreg {
+    margin-left: 15px;
 }

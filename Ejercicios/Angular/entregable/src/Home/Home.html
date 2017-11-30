@@ -12,46 +12,19 @@
         <input type="text" placeholder="Buscar..." class="buscador" >
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top img-responsive" src="http://beta.iopan.co.uk/articles/images/cards/sans-serif.jpg" alt="Sans &amp; Sans-Serif">
-                <div class="card-body">
-                    <h4 class="card-title">Sans &amp; Sans-Serif</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top img-responsive" src="http://beta.iopan.co.uk/articles/images/cards/measure.jpg" alt="Measure">
-                <div class="card-body">
-                    <h4 class="card-title">Measure</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top img-responsive" src="http://beta.iopan.co.uk/articles/images/cards/tracking-kerning.jpg" alt="Tracking &amp; Kerning">
-                <div class="card-body">
-                    <h4 class="card-title">Tracking &amp; Kerning</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top img-responsive" src="http://beta.iopan.co.uk/articles/images/cards/leading.jpg" alt="Leading">
-                <div class="card-body">
-                    <h4 class="card-title">Leading</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+<div class="container productos">
+    <div class="row rowprod">
+        <div ng-repeat="producto in productos">
+            <div class="col-md-3 col-sm-6">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top img-responsive bgimage" ng-style="{'background-image': 'url(' + producto.Imagen + ')'}" >
+                    <div class="card-body">
+                        <h4 class="card-title">{{producto.Nombre}}</h4>
+                        <p class="card-text">$ {{producto.Precio}}</p>
+                        <a href="#" class="btn btn-primary">Detalles</a>
+                    </div>
+                </div>  
             </div>
         </div>
     </div>
+</div>
