@@ -29,7 +29,7 @@ app.config(['$qProvider','$routeProvider','$locationProvider', function($qProvid
 //Autenticacaion
 app.run(['$rootScope', '$location', '$cookies', '$http',function ($rootScope, $location, $cookies, $http) {
     // mantenerse logueado luego de resfrescar la pagina
-    $rootScope.globals = $cookies.getObject('globals') || false;    //Obtengo los valore de las cookies si hay
+    $rootScope.globals = $cookies.getObject('globals') || false;    //Obtengo los valores de las cookies si hay
     if ($rootScope.globals.currentUser) {
         $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
     }
@@ -42,7 +42,7 @@ app.run(['$rootScope', '$location', '$cookies', '$http',function ($rootScope, $l
         }
         */
         // redirect a la pagina de login sino no hay usuario logueado y no tiene acceso a determinadas paginas
-        var restrictedPage = $.inArray($location.path(), ['/login', '/registro']) === -1;
+        var restrictedPage = $.inArray($location.path(), ['/home','/login', '/registro']) === -1;
         var loggedIn = $rootScope.globals ? $rootScope.globals.currentUser : false;
         var userRole = $rootScope.globals ? $rootScope.globals.currentUser.userRole : false;
         if (restrictedPage && !loggedIn) {

@@ -1,0 +1,58 @@
+.carousel_container {
+    display: block;
+    margin-top: -20px;
+    text-align: center;
+}
+.carousel_container ul{
+    height: 400px;
+    display: block;
+}
+.bgimage{
+    height: 400px;
+    display: block;
+}
+
+.navbar-default{
+    color: greenyellow;
+    background-color: greenyellow;
+}
+
+html{
+    background-color: greenyellow;
+}
+.indicator{
+    background-color: greenyellow;
+}
+
+.busca input{
+    vertical-align:middle;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+   
+}
+.container{
+    background-color: greenyellow;
+}
+
+.busca{
+    background-color: greenyellow;
+    vertical-align:middle;
+}
+
+.col-lg-3 {
+  width: 100%;
+}
+
+.navbar-default .container-fluid .collapse ul{
+    font-size: 16px;
+    color: green;
+    padding-top: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
