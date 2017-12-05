@@ -1,1 +1,43 @@
 <h2>Clientes</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 sidebar-fondo">
+            <div ng-include src="'./src/Home/sidenav.html'"></div>
+        </div>
+        <div class="col-10">
+            <h3>Nuevo usuario</h3>
+            <form name="form" ng-submit="agregarUsuario()" role="form">
+                <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'" ngf-resize="{width: 300, height: 300}">Arrastra o selecciona aqui la foto de usuario</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                <img ngf-src="!files[0].$error && files[0]">
+                <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" placeholder=" Nombre" ng-model="user.nombre">
+                </div>
+                <div class="form-group">
+                    <label for=" Nombre ">Correo</label>
+                    <input type="email" placeholder=" usuario@correo.com" ng-model="user.mail">
+                </div>
+                <div class="form-group">
+                    <label for=" Nombre ">Contraseña</label>
+                    <input type="password" placeholder=" Contraseña " ng-model="user.contrasena ">
+                </div>
+                <button class="btn btn-primary " type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="list-prod">
+        <div ng-repeat="cliente in clientes" class="det-panel-prod">
+            <div class="det-uno-prod">
+                <img class="det-img-prod" ng-src="{{cliente.foto}}">
+                Nombre <input type="text" ng-model="cliente.nombre" value="{{cliente.nombre}}">Email <input type="text" ng-model="cliente.email" value="{{cliente.email}}">
+                <button class="btn btn-danger btn-prod" ng-click="editarCliente(cliente)">Editar</button><button class="btn btn-danger btn-prod" ng-click="borrarCliente(cliente)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include src="'./src/Home/footer.html'"></div>

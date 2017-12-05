@@ -40,3 +40,35 @@
 .btnreg {
     margin-left: 15px;
 }
+
+.footBack {
+    background: #ddd;
+    padding: 20px 5px;
+    height: 90px;
+    width: 100%;
+    bottom: 0;
+}
+
+.footMens {
+    display: block;
+}
+
+.footMens>p {
+    text-align: center;
+    margin: 0px auto;
+}
+
+
+.sidebar-fondo {
+    background-color: #3F3F3F;
+}
+
+.sid-menu-item {
+    padding: 15px 10px;
+    margin-left: 20px;
+}
+
+.sid-menu-item>a:link {
+    text-decoration: none;
+    color: #fff;
+}

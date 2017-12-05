@@ -22,9 +22,9 @@ app.factory('productosFactory', ['$http','$q',function($http,$q){
         );
         return deferred.promise;
     },
-        borrarProducto: function(cliente){
+        borrarProducto: function(producto){
         var deferred = $q.defer();
-        $http.delete("http://localhost:3000/Productos/"+cliente.id).then(function(response){
+        $http.delete("http://localhost:3000/Productos/"+producto.id).then(function(response){
                 deferred.resolve(response.data);
             }, function errorCallBack(response){
                 deferred.reject(response);
@@ -32,9 +32,9 @@ app.factory('productosFactory', ['$http','$q',function($http,$q){
         );
         return deferred.promise;
     },
-        editarProducto: function(cliente){
+        editarProducto: function(producto){
         var deferred = $q.defer();
-        $http.put("http://localhost:3000/Productos/"+cliente.id, cliente).then(function(response){
+        $http.put("http://localhost:3000/Productos/"+producto.id, producto).then(function(response){
             deferred.resolve(response.data);
         }, function errorCallBack(response){
             deferred.reject(response);
@@ -42,9 +42,9 @@ app.factory('productosFactory', ['$http','$q',function($http,$q){
         );
         return deferred.promise;
     },
-        detallesProducto: function(clienteId){
+        detallesProducto: function(productoId){
         var deferred = $q.defer();
-        $http.get("http://localhost:3000/Clientes/"+clienteId).then(function(response){
+        $http.get("http://localhost:3000/productos/"+productoId).then(function(response){
             deferred.resolve(response.data);
         }, function errorCallBack(response){
             deferred.reject(response);

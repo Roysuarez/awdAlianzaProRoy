@@ -1,0 +1,43 @@
+<h2>Mantenimiento</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 sidebar-fondo">
+            <div ng-include src="'./src/Home/sidenav.html'"></div>
+        </div>
+        <div class="col-10">
+            <h3>Cambios</h3>
+            <form name="form" ng-submit="editarMantenimiento(mantenimiento)" role="form">
+                <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'" ngf-resize="{width: 200, height: 80}">Inserte o arraste el logo aquí</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                <img ngf-src="!files[0].$error && files[0]">
+
+                <div class="form-group">
+                    <label for="Nombre">Nombre sitio</label>
+                    <input type="text" placeholder="{{mantenimiento[0].nombre}}" ng-model="mantenimiento.nombre">
+                </div>
+                <div class="form-group">
+                    <label for="Telefono">Telefono</label>
+                    <input type="text" placeholder="{{mantenimiento[0].telefono}}" ng-model="mantenimiento.telefono">
+                </div>
+                <div class="form-group">
+                    <label for="Precio">Descripción</label>
+                    <input type="text" placeholder="{{mantenimiento[0].descripcion}}" ng-model="mantenimiento.descripcion">
+                </div>
+                <div class="form-group">
+                    <label for="Descripcion">Calle</label>
+                    <input type="text" placeholder="{{mantenimiento[0].calle}}" ng-model="mantenimiento.calle">
+                </div>
+                <div class="form-group">
+                    <label for="Descripcion">Pais</label>
+                    <input type="text" placeholder="{{mantenimiento[0].pais}}" ng-model="mantenimiento.numero">
+                </div>
+                <div class="form-group">
+                    <label for="Descripcion">Departamento</label>
+                    <input type="text" placeholder="{{mantenimiento[0].departamento}}" ng-model="mantenimiento.departamento">
+                </div>
+                <button class="btn btn-primary" type="submit">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div ng-include src="'./src/Home/footer.html'"></div>

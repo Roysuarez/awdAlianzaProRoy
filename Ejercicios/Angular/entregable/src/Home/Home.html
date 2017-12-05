@@ -9,16 +9,17 @@
 </div>
 
 <div class="container-fluid busca">
-        <input type="text" placeholder="Buscar..." class="buscador" >
+        <mi-buscador buscar="textoabuscar"></mi-buscador>
 </div>
 
 <div class="container productos">
     <div class="row rowprod">
-        <div ng-repeat="producto in productos">
+        <div ng-repeat="producto in productos | filter:{Nombre:textoabuscar}">
             <div class="col-md-3 col-sm-6">
                 <div class="card" style="width: 20rem;">
                     <img class="card-img-top img-responsive bgimage" ng-style="{'background-image': 'url(' + producto.Imagen + ')'}" >
                     <div class="card-body">
+                        <img src="{{producto.Imagen}}">
                         <h4 class="card-title">{{producto.Nombre}}</h4>
                         <p class="card-text">$ {{producto.Precio}}</p>
                         <a href="#" class="btn btn-primary">Detalles</a>
@@ -28,3 +29,5 @@
         </div>
     </div>
 </div>
+
+<div ng-include src="'./src/Home/footer.html'"></div

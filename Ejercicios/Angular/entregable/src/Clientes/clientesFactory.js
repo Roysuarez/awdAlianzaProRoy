@@ -51,6 +51,20 @@ app.factory('clientesFactory', ['$http','$q',function($http,$q){
             }
         );
         return deferred.promise;
+    },
+
+        confirmarEmail: function(cliente){
+        var deferred = $q.defer();
+        $http({method: 'GET', url: 'http://localhost:3000/Clientes/?email='+cliente}).then(function (response) {
+            //success
+            deferred.resolve(response.data);
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+                deferred.reject(response); 
+                }
+            );
+        return  deferred.promise;
     }
 }
 }]);

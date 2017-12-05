@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-        <img src="src/Logo/logo2.png" alt="Vegan Paradise">
+        <img src="src/Logo/logo2.png" alt="Vegan Paradise" href="#!/">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -12,13 +12,25 @@
 
     <div class="collapse navbar-collapse" id="collapse">
         <ul class="nav navbar-nav">
-            <li><a href="#!home">Home</a></li>
-            <li><a href="#!productos">Admin</a></li>
+            <li><a href="#!/">Home</a></li>
+            <li>
+                <a href="#!productos">Admin</a>
+            </li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#!login">Login</a></li>
-            <li><a href="#!registro">Registro</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li ng-show="globals.currentUser.email" class="nav-item">
+                <span class="welcome">Bienvenido <strong>{{globals.currentUser.nombre}}</strong></span>
+            </li>    
+            <li ng-hide="globals.currentUser.email" class="nav-item">
+                <a class="nav-link" href="#!login">Login</a>
+            </li>
+            <li ng-hide="globals.currentUser.email" class="nav-item">
+                <a class="nav-link" href="#!registro">Registro</a>
+            </li>
+            <li ng-show="globals.currentUser.email">
+                <a href="#!login" ng-controller="loginController" ng-click="logout()">Log Out</a>
+            </li>
         </ul>
     </div>
   </div>

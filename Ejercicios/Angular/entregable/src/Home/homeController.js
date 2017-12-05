@@ -6,6 +6,8 @@ app.controller('homeController', ["$scope","homeFactory","productosFactory",func
                          { id:4, imagen: './src/Home/4.jpg'}
                     ];
     $scope.carouselIndex = 0;
+
+    
     homeFactory.obtenerImagenes().then(function(response){
         $scope.image = response;
     });

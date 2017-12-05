@@ -1,1 +1,43 @@
 <h2>Productos</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 sidebar-fondo">
+            <div ng-include src="'./src/Home/sidenav.html'"></div>
+        </div>
+        <div class="col-10">
+            <h3>Nuevo Producto</h3>
+            <form name="form" ng-submit="agregarProducto()" role="form">
+                <div cursor="pointer" ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'" ngf-resize="{width: 300, height: 300}">arrastra o selecciona aqui la foto del producto</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                <img ngf-src="!files[0].$error && files[0]">
+                <div class="form-group">
+                    <label for="Nombre">Nombre Producto</label>
+                    <input type="text" placeholder=" Nombre" ng-model="producto.Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="Precio">Precio</label>
+                    <input type="text" placeholder=" Precio" ng-model="producto.Precio">
+                </div>
+                <div class="form-group">
+                    <label for="detalles">detalles</label>
+                    <textarea name="detalles" id="detalles" cols="35" rows="5" placeholder=" Detalles del producto" ng-model="producto.Detalles"></textarea>
+                </div>
+                <button class="btn btn-primary " type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="list-prod">
+        <div ng-repeat="producto in productos" class="det-panel-prod">
+            <div class="det-uno-prod">
+                <img class="det-img-prod" ng-src="{{producto.Imagen}}">
+                Nombre <input type="text" ng-model="producto.Nombre" value="{{producto.Nombre}}">Precio <input type="text" ng-model="producto.Precio" value="{{producto.Precio}}">
+                <button class="btn btn-danger btn-prod" ng-click="editarProducto(producto)">Editar</button><button class="btn btn-danger btn-prod" ng-click="borrarProducto(producto)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include src="'./src/Home/footer.html'"></div>
