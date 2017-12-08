@@ -1,16 +1,22 @@
 var producto = require('../Model/productos')
 
 function obtenerPorNombre(nombre){
-var respuesta = "";
+var respuesta = [];
 producto.find({Nombre: new RegExp(nombre, 'i')}, function (err, productos){
     if(err) return productos.send(500, err.message);
-    console.log("2" + productos);
-    respuesta = "nombre: " + productos[0].Nombre + " " + "precio: $" + productos[0].Precio;
-    console.log(respuesta);
+    respuesta = productos;
     return respuesta;
-});
+})};
 
-}
+function obtenerListaOrdenada(min,max){
+var respuesta = [];
+producto.find({Precio: {$gt: min, $lt: max}}.sort({ Precio: asc}), function (err, productos){
+    if(err) return productos.send(500, err.message);
+    respuesta = productos;
+    return respuesta;
+})};
+
+
 
 exports.add = function(req, res) {
     var product = new producto({
@@ -69,6 +75,16 @@ exports.findByName = function(req, res){
         console.log("3"+productos);
         return res.send(productos);       
 };
+
+exports.findList = function(req, res){
+    var min = 0;
+    var max = 0;
+    var productos = [];
+    min = req.query.min;
+    max = req.query.max;
+    productos = obtenerListaOrdenada(min,max);
+    return res.send(productos);
+}
 
 
 
